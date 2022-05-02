@@ -1,0 +1,8 @@
+.inventory {
+    border: 1px solid gray;
+    background-color: rgb(26, 24, 24);
+    color: white;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}

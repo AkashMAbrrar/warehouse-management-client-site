@@ -1,9 +1,10 @@
 import React from 'react';
+import './Inventory.css';
 
 const Inventory = ({ inventory }) => {
     const { name, img, description, suplierName, price } = inventory;
     return (
-        <div>
+        <div className='inventory'>
             <img src={img} alt="" />
             <h2>{name}</h2>
             <p>Price:{price}</p>
