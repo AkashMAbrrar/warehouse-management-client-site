@@ -1,0 +1,23 @@
+.delivery-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    text-align: center;
+}
+
+@media only screen and (max-width:576px) {
+    .delivery-container {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+
+    .delivery-container img {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width:992px) {
+    .delivery-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
