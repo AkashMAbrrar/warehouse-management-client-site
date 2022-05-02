@@ -10,7 +10,7 @@ const Inventory = ({ inventory }) => {
             <p>Price:{price}</p>
             <p>Suplier-Name:{suplierName}</p>
             <p><small>{description}</small></p>
-            <button>Update</button>
+            <button className='btn btn-info'>Update</button>
         </div>
     );
 };
