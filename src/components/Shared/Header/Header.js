@@ -6,16 +6,24 @@ import logo from '../../images/logo-1.png';
 const Header = () => {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">
                         <img className='logo' src={logo} alt="" />
                     </Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#features">Features</Nav.Link>
+                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        </Nav>
+                        <Nav>
+                            <Nav.Link href="#deets">Blogs</Nav.Link>
+                            <Nav.Link eventKey={2} href="#memes">
+                                Login
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </>
