@@ -8,6 +8,7 @@ import Blogs from './components/Home/Blogs/Blogs';
 import Login from './components/Login/Login';
 import Features from './components/Features/Features';
 import NotFound from './components/NotFound/NotFound';
+import Register from './components/Login/Register/Register';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/feature/:featureId' element={<Features></Features>}></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
