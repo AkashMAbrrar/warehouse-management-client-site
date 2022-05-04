@@ -1,6 +1,7 @@
+import { async } from '@firebase/util';
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase_init';
 import SocialMedia from './SocialMedia/SocialMedia';
@@ -19,6 +20,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     if (user) {
         navigate(from, { replace: true });
@@ -39,6 +41,12 @@ const Login = () => {
         navigate('/register');
     }
 
+    const resetPass = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+    }
+
     return (
         <div className='conatainer w-50 mx-auto'>
             <h2 className='text-center m-3'>Login Here Before Enter</h2>
@@ -50,15 +58,13 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control ref={passRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="dark" type="submit">
-                    Submit
+                <Button variant="dark w-50 mx-auto d-block m-2" type="submit">
+                    Login
                 </Button>
             </Form>
             {errorOption}
             <p>New To Warehouse? <Link to='/register' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link></p>
+            <p>Forget Password ? <Link to='/register' className='text-primary pe-auto text-decoration-none' onClick={resetPass}>Reset Password</Link></p>
             <SocialMedia></SocialMedia>
         </div>
     );
