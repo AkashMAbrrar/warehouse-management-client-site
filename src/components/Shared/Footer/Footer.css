@@ -1,3 +1,10 @@
 .footer-container {
     margin-top: auto;
 }
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 100px;
+}
