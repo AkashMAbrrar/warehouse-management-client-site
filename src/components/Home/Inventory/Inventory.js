@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Inventory.css';
 
 const Inventory = ({ inventory }) => {
@@ -16,7 +16,9 @@ const Inventory = ({ inventory }) => {
             <p>Quantity:{quantity}</p>
             <p>Suplier-Name:{suplierName}</p>
             <p><small>{description}</small></p>
-            <button onClick={() => directionToFeature(_id)} className='btn btn-info'>Update</button>
+            <Link to='/login'>
+                <button onClick={() => directionToFeature(_id)} className='btn btn-info'>Update</button>
+            </Link>
         </div>
     );
 };
