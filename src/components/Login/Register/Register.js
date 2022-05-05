@@ -5,6 +5,7 @@ import './Register.css';
 import auth from '../../../firebase_init';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import { async } from '@firebase/util';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);
@@ -19,6 +20,10 @@ const Register = () => {
     const navigate = useNavigate();
     const navigateLogin = () => {
         navigate('/login')
+    }
+
+    if (loading || updating) {
+        <Loading></Loading>
     }
 
     const handleRegister = async (event) => {
