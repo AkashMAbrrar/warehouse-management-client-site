@@ -63,7 +63,6 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Control ref={passRef} type="password" placeholder="Password" required />
                 </Form.Group>
