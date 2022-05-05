@@ -16,7 +16,7 @@ const Inventory = ({ inventory }) => {
             <p>Quantity:{quantity}</p>
             <p>Suplier-Name:{suplierName}</p>
             <p><small>{description}</small></p>
-            <Link to='/feature/'>
+            <Link to={`/feature/${_id}`}>
                 <button onClick={() => directionToFeature(_id)} className='btn btn-info'>Update</button>
             </Link>
         </div>
